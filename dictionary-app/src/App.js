@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import '../dist/output.css';
+// import '../dist/output.css';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
