@@ -1,5 +1,17 @@
+import React from 'react';
+import DropdownMenu from "./DropdownMenu";
+
 function Header() {
-  return (
+//   const button = document.getElementById("menu-button");
+//   const menu = document.querySelector("[role='menu']");
+
+//   button.addEventListener("click", () => {
+//     menu.ClassList.toggle("hidden");
+//   });
+  
+
+
+    return (
     <>
       <div className="header-container">
         <svg
@@ -26,7 +38,7 @@ function Header() {
             <div>
               <button
                 type="button"
-                class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                class="header-btn inline-flex w-full justify-center gap-x-1.5 rounded-md bg-none px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
                 id="menu-button"
                 aria-expanded="true"
                 aria-haspopup="true"
