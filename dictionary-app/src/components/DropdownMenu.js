@@ -15,6 +15,7 @@ function DropdownMenu() {
 
   return (
     <>
+      <div className="font-dropdown">
       <div className="relative inline-block text-left">
         <div>
           <button
@@ -26,7 +27,7 @@ function DropdownMenu() {
             onClick={toggleMenu}
           >
             {selectedOption}
-           
+            <svg xmlns="http://www.w3.org/2000/svg" className="dropdown-arrow" width="14" height="8" viewBox="0 0 14 8"><path fill="none" stroke="#A445ED" stroke-width="1.5" d="m1 1 6 6 6-6"/></svg>
           </button>
         </div>
         <div
@@ -46,7 +47,7 @@ function DropdownMenu() {
             id="menu-item-0"
             onClick={() => handleOptionClick("Sans Serif")}
           >
-            Sans Serif
+            <div className="sans-serif">Sans Serif</div>
           </a>
           <a
             href="#"
@@ -56,7 +57,7 @@ function DropdownMenu() {
             id="menu-item-1"
             onClick={() => handleOptionClick("Serif")}
           >
-            Serif
+            <div className="serif">Serif</div>
           </a>
           <a
             href="#"
@@ -66,9 +67,10 @@ function DropdownMenu() {
             id="menu-item-2"
             onClick={() => handleOptionClick("Mono")}
           >
-            Mono
+            <div className="mono">Mono</div>
           </a>
         </div>
+      </div>
       </div>
     </>
   );

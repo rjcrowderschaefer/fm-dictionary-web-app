@@ -1,5 +1,6 @@
 import React from "react";
 import DropdownMenu from "./DropdownMenu";
+import Switcher from "./Switcher";
 
 function Header() {
   //   const button = document.getElementById("menu-button");
@@ -31,11 +32,12 @@ function Header() {
             <path d="M11 9h12" />
           </g>
         </svg>
-        <div className="font-dropdown">
           <DropdownMenu />
-        </div>
+        <div className="hdr-vl"></div>
         <div className="mode-toggle-container">
           <div className="mode-toggle">
+            <Switcher />
+            </div>
             <svg
               className="moon"
               xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,7 @@ function Header() {
               />
             </svg>
           </div>
-        </div>
+  
       </div>
     </>
   );
