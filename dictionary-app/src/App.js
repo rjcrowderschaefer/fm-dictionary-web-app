@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 // import '../dist/output.css';
 import Header from "./components/Header";
+import Search from './components/Search';
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Result from "./pages/Result";
@@ -14,6 +15,7 @@ function App() {
     <>
     <div className="content-container">
       <Header />
+      <Search />
       {/* <Routes>
         <Route path='/' element={<Home />} />
         <Route path=':id'>
