@@ -220,3 +220,18 @@ input[type="search"]:focus {
   border-color: #1183d6;
   outline: none;
 }
+
+.error-message {
+  padding: 10px;
+  border: 2px solid red;
+  color: red;
+}
+
+.not-found-error {
+  background-color: lightpink;
+}
+
+.server-error {
+  background-color: darkred;
+  color: white;
+}

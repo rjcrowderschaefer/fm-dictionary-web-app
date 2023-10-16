@@ -10,8 +10,14 @@ import Result from "./pages/Result";
 import Error from "./pages/Error";
 import { Route, Routes } from "react-router-dom";
 
+const errorTypeToClass = {
+  '404': 'not-found-error'
+};
+
 function App() {
   const [results, setResults] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [errorType, setErrorType] = useState('');
 
   // async function fetchSearchResult(e) {
   //   e.preventDefault();
@@ -28,18 +34,36 @@ function App() {
   // }
 
   const fetchSearchResult = async (searchedWord) => {
+    setResults(null);
+
     try {
       const response = await fetch(
         `https://api.dictionaryapi.dev/api/v2/entries/en/${searchedWord}`
-      );
+      )
+      console.log(response);
       if (response.ok) {
         const data = await response.json();
         setResults(data);
       } else {
-        console.error("API request failed");
+        console.log("API request failed");
       }
-    } catch (err) {
-      console.error("Error during API request:", err);
+    } catch (error) {
+      console.log(error.response)
+      console.log(error.response.status)
+      console.log(error)
+      if (error.response) {
+        if (error.response.status === 404) {
+          setErrorMessage('Resource not found. Please try again.');
+          setErrorType('404');
+        } else {
+          setErrorMessage('An error occurred. Please try again.');
+          setErrorType('other');
+        }
+      } else {
+        setErrorMessage('Network error. Please check your connection.');
+        setErrorType('network');
+      }
+      // console.log(error.response);
     }
   }
 
@@ -48,7 +72,7 @@ function App() {
       <div className="content-container">
         <Header />
         <Search onSearch={fetchSearchResult} />
-        <Results results={results} />
+        <Results errorMessage={errorMessage} results={results} />
         {/* <Routes>
         <Route path='/' element={<Home />} />
         <Route path=':id'>

@@ -23,8 +23,8 @@ function DropdownMenu() {
     };
 
     document.addEventListener("click", handleClickOutside);
-    console.log(handleClickOutside)
-    console.log(setIsMenuOpen)
+    // console.log(handleClickOutside)
+    // console.log(setIsMenuOpen)
 
     return () => {
       document.removeEventListener("click", handleClickOutside);
