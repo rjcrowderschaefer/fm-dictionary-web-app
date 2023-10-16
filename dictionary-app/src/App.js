@@ -19,20 +19,6 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
   const [errorType, setErrorType] = useState('');
 
-  // async function fetchSearchResult(e) {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch(
-  //       `https://api.dictionaryapi.dev/api/v2/entries/en/${searchedWord}`
-  //     );
-  //     const data = await response.json();
-  //     setSearchResults(data);
-  //     console.log(data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
-
   const fetchSearchResult = async (searchedWord) => {
     setResults(null);
 
@@ -44,28 +30,17 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         setResults(data);
+      } else if (response.status === 404) {
+        console.log("404 error");
+        setErrorMessage('Resource not found. Please try again.');
+        setErrorType('404');
       } else {
         console.log("API request failed");
       }
-    } catch (error) {
-      console.log(error.response)
-      console.log(error.response.status)
-      console.log(error)
-      if (error.response) {
-        if (error.response.status === 404) {
-          setErrorMessage('Resource not found. Please try again.');
-          setErrorType('404');
-        } else {
-          setErrorMessage('An error occurred. Please try again.');
-          setErrorType('other');
-        }
-      } else {
-        setErrorMessage('Network error. Please check your connection.');
-        setErrorType('network');
-      }
-      // console.log(error.response);
-    }
+    } catch (err) {
+      console.log(err)
   }
+}
 
   return (
     <>

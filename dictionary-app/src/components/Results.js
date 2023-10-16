@@ -1,14 +1,14 @@
 import React from "react";
+import Error from "../pages/Error";
 
 function Results({ errorMessage, results }) {
   let content;
   
-  console.log(errorMessage)
-
   if (errorMessage) {
     content = (
         <div className="error-message">
-            <p>{errorMessage}</p>
+            
+            <Error />
         </div>
     );
   } else if (results === null) {
