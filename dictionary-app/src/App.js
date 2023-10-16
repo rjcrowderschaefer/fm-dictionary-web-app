@@ -30,6 +30,7 @@ function App() {
       if (response.ok) {
         const data = await response.json();
         setResults(data);
+        console.log(data)
       } else if (response.status === 404) {
         console.log("404 error");
         setErrorMessage('Resource not found. Please try again.');
