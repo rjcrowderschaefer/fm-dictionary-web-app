@@ -18,10 +18,10 @@ function Results({ errorMessage, results }) {
         <div className="results-header">
           <h1>{result.word}</h1>
           <h2>{result.phonetic}</h2>
+          <div className="audio">
           {result.phonetics &&
             result.phonetics.map((phonetic, phoneticIdx) => (
               <div key={phoneticIdx}>
-                {/* Check if phonetic.audio is not null and a valid source, and if it's the first valid source */}
                 {phonetic.audio &&
                   phonetic.audio.trim() !== "" &&
                   (phoneticIdx === 0 ||
@@ -58,6 +58,8 @@ function Results({ errorMessage, results }) {
                   )}
               </div>
             ))}
+            </div>
+            </div>
           <div className="results-meanings">
             {result.meanings &&
               result.meanings.map((meaning, meaningIdx) => (
@@ -79,7 +81,6 @@ function Results({ errorMessage, results }) {
               ))}
           </div>
         </div>
-      </div>
     ));
   } else {
     content = <p>No results found.</p>;
