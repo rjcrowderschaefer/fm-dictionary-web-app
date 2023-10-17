@@ -43,7 +43,7 @@ function Results({ errorMessage, results }) {
                             height="75"
                             viewBox="0 0 75 75"
                           >
-                            <g fill="#A445ED" fill-rule="evenodd">
+                            <g fill="#A445ED" fillRule="evenodd">
                               <circle
                                 cx="37.5"
                                 cy="37.5"
@@ -65,21 +65,25 @@ function Results({ errorMessage, results }) {
             result.meanings.map((meaning, meaningIdx) => (
               <div key={meaningIdx}>
                 <div className="meaning-header-container">
-                <h2>{meaning.partOfSpeech}</h2>
-                <div className="hl"></div>
+                  <h2>{meaning.partOfSpeech}</h2>
+                  <div className="hl"></div>
                 </div>
+                <div className="meaning-results-container">
                 <h3>Meaning</h3>
-                  {meaning.definitions.map((definition, defIdx) => (
-                      <li key={defIdx}>
-                      <ul>{definition.definition}
-                      </ul>
-                      {definition.example && (
-                        <div>
-                          "{definition.example}"
-                        </div>
-                      )}
-                    </li>
-                  ))}
+
+                {meaning.definitions.map((definition, defIdx) => (
+                  <div key={defIdx}>
+                    <ul>
+                      <li className="definition">{definition.definition}</li>
+                    </ul>
+                  </div>
+                ))}
+                {meaning.definitions.map((definition, defIdx) => (
+                  <div key={defIdx}>
+                    {definition.example && <div>"{definition.example}"</div>}
+                  </div>
+                ))}
+              </div>
               </div>
             ))}
         </div>
