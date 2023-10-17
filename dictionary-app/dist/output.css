@@ -1590,6 +1590,11 @@ h1 {
   line-height: normal;
 }
 
+.results-header {
+  display: flex;
+  flex-direction: column;
+}
+
 .before\:pointer-events-none::before{
   content: var(--tw-content);
   pointer-events: none;

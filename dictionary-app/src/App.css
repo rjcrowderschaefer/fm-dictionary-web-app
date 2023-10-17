@@ -280,3 +280,8 @@ h1 {
   font-weight: 700;
   line-height: normal;
 }
+
+.results-header {
+  display: flex;
+  flex-direction: column;
+}
