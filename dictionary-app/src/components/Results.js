@@ -69,21 +69,34 @@ function Results({ errorMessage, results }) {
                   <div className="hl"></div>
                 </div>
                 <div className="meaning-results-container">
-                <h3>Meaning</h3>
+                  <h3>Meaning</h3>
 
-                {meaning.definitions.map((definition, defIdx) => (
-                  <div key={defIdx}>
-                    <ul>
-                      <li className="definition">{definition.definition}</li>
-                    </ul>
+                  {meaning.definitions.map((definition, defIdx) => (
+                    <div key={defIdx}>
+                      <ul>
+                        <li className="definition">{definition.definition}</li>
+                      </ul>
+                    </div>
+                  ))}
+                  <div className="synonym-container">
+                    {meaning.synonyms && meaning.synonyms.length > 0 && (
+                    <>
+                    <h3>Synonyms</h3>
+                    {meaning.synonyms.map((synonym, synIdx) => (
+                      <div key={synIdx}>
+                        <span className="synonym">{synonym}</span>
+                      </div>
+                    ))}
+                      </>
+                    )}
                   </div>
-                ))}
-                {meaning.definitions.map((definition, defIdx) => (
-                  <div key={defIdx}>
-                    {definition.example && <div>"{definition.example}"</div>}
-                  </div>
-                ))}
-              </div>
+
+                  {meaning.definitions.map((definition, defIdx) => (
+                    <div key={defIdx}>
+                      {definition.example && <div>"{definition.example}"</div>}
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
         </div>
