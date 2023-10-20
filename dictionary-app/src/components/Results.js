@@ -73,26 +73,54 @@ function Results({ errorMessage, results }) {
 
                   {meaning.definitions.map((definition, defIdx) => (
                     <div key={defIdx}>
-                      <ul>
-                        <li className="definition">{definition.definition}</li>
-                      </ul>
+                      <div className="definition-li-container">
+                        <ul>
+                          <li className="definition">
+                            {definition.definition}
+                          </li>
+                        </ul>
+                        {definition.example}
+                      </div>
                     </div>
                   ))}
-                  <div className="synonym-container">
-                    {meaning.synonyms && meaning.synonyms.length > 0 && (
-                    <>
-                    <h3>Synonyms</h3>
-                    {meaning.synonyms.map((synonym, synIdx) => (
-                      <div key={synIdx}>
-                        <span className="synonym">{synonym}</span>
-                      </div>
-                    ))}
+                  {meaning.synonyms && meaning.synonyms.length > 0 && (
+                    <div className="synonym-container">
+                      <>
+                        <h3>Synonyms</h3>
+                        {meaning.synonyms.length > 1
+                          ? meaning.synonyms.map((synonym, synIdx) => (
+                              <div key={synIdx} className="synonym">
+                                {synonym},&nbsp;
+                              </div>
+                            ))
+                          : meaning.synonyms.map((synonym, synIdx) => (
+                              <div key={synIdx}>
+                                <span className="synonym">{synonym}</span>
+                              </div>
+                            ))}
                       </>
-                    )}
-                  </div>
-
+                    </div>
+                  )}
+                  {meaning.antonyms && meaning.antonyms.length > 0 && (
+                    <div className="antonym-container">
+                      <>
+                        <h3>Antonyms</h3>
+                        {meaning.antonyms.length > 1
+                          ? meaning.antonyms.map((antonym, antIdx) => (
+                              <div key={antIdx} className="antonym">
+                                {antonym},&nbsp;
+                              </div>
+                            ))
+                          : meaning.antonyms.map((antonym, antIdx) => (
+                              <div key={antIdx}>
+                                <span className="antonym">{antonym}</span>
+                              </div>
+                            ))}
+                      </>
+                    </div>
+                  )}
                   {meaning.definitions.map((definition, defIdx) => (
-                    <div key={defIdx}>
+                    <div key={defIdx} className="example">
                       {definition.example && <div>"{definition.example}"</div>}
                     </div>
                   ))}

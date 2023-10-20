@@ -596,6 +596,40 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 .sr-only{
   position: absolute;
   width: 1px;
@@ -950,6 +984,10 @@ video {
 
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
 }
 
 .items-center{
@@ -1674,7 +1712,7 @@ h1 {
   text-align: justify;
 }
 
-li::before {
+.definition-li-container li::before {
   content: "•";
   width: 5px;
   height: 5px;
@@ -1696,7 +1734,9 @@ li::before {
 .synonym-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 33px;
+  /* justify-content: space-between; */
 }
 
 .synonym {
@@ -1705,6 +1745,54 @@ li::before {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 3px;
+  text-align: justify;
+}
+
+.synonym-container h3 {
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+.synonym-container li {
+  list-style: none;
+}
+
+.antonym-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 33px;
+  /* justify-content: space-between; */
+}
+
+.antonym {
+  color: #A445ED;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 3px;
+  text-align: justify;
+}
+
+.antonym-container h3 {
+  margin-right: 10px;
+  margin-bottom: 0px;
+}
+
+.antonym-container li {
+  list-style: none;
+}
+
+.example {
+  color: #757575;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+  margin: 0 0 32px 24px;
+  padding: 0;
 }
 
 .before\:pointer-events-none::before{
@@ -2073,3 +2161,4 @@ li::before {
     padding-right: 2rem;
   }
 }
+
