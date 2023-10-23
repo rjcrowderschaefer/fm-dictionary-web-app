@@ -65,7 +65,11 @@ function Results({ errorMessage, results }) {
             result.meanings.map((meaning, meaningIdx) => (
               <div key={meaningIdx}>
                 <div className="meaning-header-container">
-                  <h2>{meaning.partOfSpeech}</h2>
+                  {meaningIdx === 0 ? (
+                    <h2 id="first-partOfSpeech">{meaning.partOfSpeech}</h2>
+                  ) : (
+                    <h2>{meaning.partOfSpeech}</h2>
+                  )}
                   <div className="hl"></div>
                 </div>
                 <div className="meaning-results-container">
@@ -79,7 +83,9 @@ function Results({ errorMessage, results }) {
                             {definition.definition}
                           </li>
                         </ul>
-                        {definition.example}
+                        {definition.example && definition.example.length > 0 ? (
+                          <div className="example">"{definition.example}"</div>
+                        ) : null}
                       </div>
                     </div>
                   ))}
@@ -119,14 +125,21 @@ function Results({ errorMessage, results }) {
                       </>
                     </div>
                   )}
-                  {meaning.definitions.map((definition, defIdx) => (
-                    <div key={defIdx} className="example">
-                      {definition.example && <div>"{definition.example}"</div>}
-                    </div>
-                  ))}
                 </div>
               </div>
             ))}
+        </div>
+        <div className="source-footer">
+          <div className="footer-hl">
+            <h4>Source</h4>
+            {result.sourceUrls &&
+              result.sourceUrls.map((source, sourceIdx) => (
+                <div key={sourceIdx}className="source-results-container">
+                    <a href={source.sourceUrls}>{source.sourceUrls}</a>
+                    
+                </div>
+              ))}
+          </div>
         </div>
       </div>
     ));
