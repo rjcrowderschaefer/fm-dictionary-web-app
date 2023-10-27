@@ -3,7 +3,7 @@ import Error from "../pages/Error";
 
 function Results({ errorMessage, results }) {
   let content;
-
+    console.log(results)
   if (errorMessage) {
     content = (
       <div className="error-message">
@@ -132,15 +132,12 @@ function Results({ errorMessage, results }) {
         <div className="source-footer">
           <div className="footer-hl">
             <h4>Source</h4>
-            {result.sourceUrls &&
-              result.sourceUrls.map((source, sourceIdx) => (
-                <div key={sourceIdx}className="source-results-container">
-                    <a href={source.sourceUrls}>{source.sourceUrls}</a>
+            <a href={result.sourceUrls} target="_blank">{result.sourceUrls}</a> 
                     
                 </div>
-              ))}
+              
           </div>
-        </div>
+      
       </div>
     ));
   } else {
