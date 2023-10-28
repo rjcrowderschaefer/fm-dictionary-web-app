@@ -350,11 +350,13 @@ h1 {
 
 .hl {
   border-top: 1px solid #E9E9E9;
-  opacity: 0.25;
+  opacity: 1;
   width: 266px;
   margin-left: 16px;
   margin-top: 3px;
 }
+
+
 
 .results-meanings h3 {
   color: #757575;
@@ -415,7 +417,6 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
 }
 
 .antonym {
@@ -447,3 +448,45 @@ h1 {
   padding: 0;
 }
 
+.footer-hl {
+  border-top: 1px solid #E9E9E9;
+  opacity: 1;
+  width: 327px;
+  height: 1px;
+  margin: 19px 0 24px 24px;
+}
+
+.source-footer {
+  margin: 0 0 85px 24px;
+}
+
+h4 {
+  color: #757575;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-bottom: 8px;
+}
+
+.source-url-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.source-url {
+  display: inline;
+  color: #2D2D2D;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-bottom: 85px;
+}
+
+.source-url-container svg {
+  display: inline;
+  margin-left: 9px;
+}
