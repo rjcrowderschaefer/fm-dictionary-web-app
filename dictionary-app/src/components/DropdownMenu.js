@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 function DropdownMenu() {
   const [selectedOption, setSelectedOption] = useState("Sans Serif");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [selectedFontFamily, setSelectedFontFamily] = useState("sans-serif");
 
   const menuRef = useRef(null);
 
@@ -13,6 +14,17 @@ function DropdownMenu() {
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsMenuOpen(false);
+
+    setSelectedFontFamily(
+      option === "Sans Serif"
+      ? "sans-serif"
+      : option === "Serif"
+      ? "serif"
+      : option === "Mono"
+      ? "mono"
+      : "sans-serif"
+    );
+
   };
 
   useEffect(() => {
@@ -26,10 +38,22 @@ function DropdownMenu() {
     // console.log(handleClickOutside)
     // console.log(setIsMenuOpen)
 
+    document.body.style.setProperty(
+      "--selected-font-family",
+      selectedOption === "Sans Serif"
+      ? "sans-serif"
+      : selectedOption === "Serif"
+      ? "serif"
+      : selectedOption === "Mono"
+      ? "mono"
+      : "sans-serif"
+    );
+
+
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [selectedOption]);
 
   return (
     <>
@@ -38,15 +62,8 @@ function DropdownMenu() {
           <div>
             <button
               type="button"
-              className={`inline-flex w-full justify-center gap-x-1.5 rounded-md ${
-                selectedOption === "Sans Serif"
-                  ? "sans-serif"
-                  : selectedOption === "Serif"
-                  ? "serif"
-                  : selectedOption === "Mono"
-                  ? "mono"
-                  : ""
-              }`}
+              className={`inline-flex w-full justify-center gap-x-1.5 rounded-md`}
+              style={{ fontFamily: `var(--selected-font-family)` }}
               id="menu-button"
               ref={menuRef}
               aria-expanded={isMenuOpen}
@@ -78,6 +95,7 @@ function DropdownMenu() {
             aria-orientation="vertical"
             aria-labelledby="menu-button"
             tabIndex="-1"
+            style={{ fontFamily: `var(--selected-font-family)` }}
           >
             <a
               href="#"

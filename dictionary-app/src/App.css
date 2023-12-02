@@ -58,7 +58,8 @@ a {
 body {
   margin: 0 0 0 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
+  /* font-family: "Inter", sans-serif; */
+  font-family: var(--selected-font-family, sans-serif);
 }
 
 .content-container {
@@ -355,8 +356,6 @@ h1 {
   margin-left: 16px;
   margin-top: 3px;
 }
-
-
 
 .results-meanings h3 {
   color: #757575;
