@@ -15,15 +15,28 @@ function DropdownMenu() {
     setSelectedOption(option);
     setIsMenuOpen(false);
 
-    setSelectedFontFamily(
+    // setSelectedFontFamily(
+    //   option === "Sans Serif"
+    //   ? "sans-serif"
+    //   : option === "Serif"
+    //   ? "serif"
+    //   : option === "Mono"
+    //   ? "mono"
+    //   : "sans-serif"
+    // );
+
+    const fontToSet = 
       option === "Sans Serif"
       ? "sans-serif"
       : option === "Serif"
       ? "serif"
       : option === "Mono"
       ? "mono"
-      : "sans-serif"
-    );
+      : "sans-serif";
+
+    console.log("Selected Font:", fontToSet)
+
+    setSelectedFontFamily(fontToSet)
 
   };
 
