@@ -152,6 +152,14 @@ h1 {
   background-color: #a445ed;
 }
 
+.dark-mode {
+  background-color: red;
+}
+
+.light-mode {
+  background-color: blue;
+}
+
 
 .moon {
   margin-left: 10px;

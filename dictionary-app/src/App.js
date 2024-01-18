@@ -18,6 +18,7 @@ function App() {
   const [results, setResults] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [errorType, setErrorType] = useState('');
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const fetchSearchResult = async (searchedWord) => {
     setResults(null);
@@ -43,10 +44,16 @@ function App() {
   }
 }
 
+const handleDarkModeToggle = (newDarkModeValue) => {
+  setIsDarkMode(newDarkModeValue);
+};
+
+
+
   return (
     <>
-      <div className="content-container">
-        <Header />
+      <div className={`content-container ${isDarkMode ? 'dark-mode' : 'light-mode'}`}>
+        <Header onDarkModeToggle={handleDarkModeToggle} />
         <Search onSearch={fetchSearchResult} />
         <Results errorMessage={errorMessage} results={results} />
         {/* <Routes>

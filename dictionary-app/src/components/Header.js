@@ -10,6 +10,14 @@ function Header() {
   //     menu.ClassList.toggle("hidden");
   //   });
 
+  const handleDarkModeToggle = (isDarkMode) => {
+    if (isDarkMode) {
+      console.log('Dark mode toggle clicked!')
+    } else {
+      console.log('Light mode toggle clicked!')
+    } 
+  };
+
   return (
     <>
       <div className="header-container">
@@ -36,7 +44,7 @@ function Header() {
         <div className="hdr-vl"></div>
         <div className="mode-toggle-container">
           <div className="mode-toggle">
-            <Switcher />
+            <Switcher onToggle={handleDarkModeToggle}/>
             </div>
             <svg
               className="moon"
