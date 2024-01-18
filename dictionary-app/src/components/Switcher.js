@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Switcher = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -6,6 +6,7 @@ const Switcher = () => {
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
 
   return (
     <>
