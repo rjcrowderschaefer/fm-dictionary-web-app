@@ -40,6 +40,8 @@ function DropdownMenu() {
 
   };
 
+
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -48,19 +50,17 @@ function DropdownMenu() {
     };
 
     document.addEventListener("click", handleClickOutside);
-    // console.log(handleClickOutside)
-    // console.log(setIsMenuOpen)
 
-    document.body.style.setProperty(
-      "--selected-font-family",
-      selectedOption === "Sans Serif"
-      ? "sans-serif"
-      : selectedOption === "Serif"
-      ? "serif"
-      : selectedOption === "Mono"
-      ? "mono"
-      : "sans-serif"
-    );
+
+    document.body.classList.remove("sans-serif", "serif", "mono");
+
+    if (selectedOption === "Sans Serif") {
+      document.body.classList.add("sans-serif");
+    } else if (selectedOption === "Serif") {
+      document.body.classList.add("serif");
+    } else if (selectedOption === "Mono") {
+      document.body.classList.add("mono");
+    }
 
 
     return () => {
