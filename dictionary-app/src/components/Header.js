@@ -11,10 +11,15 @@ function Header() {
   //   });
 
   const handleDarkModeToggle = (isDarkMode) => {
+    const darkModeClass = 'dark-mode';
+    const contentContainer = document.querySelector('.content-container');
+
     if (isDarkMode) {
       console.log('Dark mode toggle clicked!')
+      contentContainer.classList.add(darkModeClass);
     } else {
       console.log('Light mode toggle clicked!')
+      contentContainer.classList.remove(darkModeClass);
     } 
   };
 

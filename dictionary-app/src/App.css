@@ -153,12 +153,13 @@ h1 {
 }
 
 .dark-mode {
-  background-color: red;
+  background-color: #000000;
+  color: #ffffff;
 }
 
-.light-mode {
+/* .light-mode {
   background-color: blue;
-}
+} */
 
 
 .moon {
