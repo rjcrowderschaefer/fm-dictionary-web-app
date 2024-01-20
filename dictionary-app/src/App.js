@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 // import '../dist/output.css';
 import Header from "./components/Header";
@@ -44,9 +44,16 @@ function App() {
   }
 }
 
-const handleDarkModeToggle = (newDarkModeValue) => {
-  setIsDarkMode(newDarkModeValue);
-};
+  // useEffect(() => {
+  //   const dynamicContent = document.querySelector(".dynamic-content");
+  //   if (dynamicContent) {
+  //     dynamicContent.classList.toggle('dark-mode', isDarkMode);
+  //   }
+  // }, [isDarkMode]);
+
+  const handleDarkModeToggle = (newDarkModeValue) => {
+    setIsDarkMode(newDarkModeValue);
+  };
 
 
 

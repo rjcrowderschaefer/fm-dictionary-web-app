@@ -2,24 +2,30 @@ import React from "react";
 import DropdownMenu from "./DropdownMenu";
 import Switcher from "./Switcher";
 
-function Header() {
-  //   const button = document.getElementById("menu-button");
-  //   const menu = document.querySelector("[role='menu']");
-
-  //   button.addEventListener("click", () => {
-  //     menu.ClassList.toggle("hidden");
-  //   });
+function Header( { onDarkModeToggle, isDarkMode} ) {
 
   const handleDarkModeToggle = (isDarkMode) => {
     const darkModeClass = 'dark-mode';
+    const html = document.querySelector('html');
     const contentContainer = document.querySelector('.content-container');
+    const moonIcon = document.querySelector('.moon');
+    const dropDownMenu = document.querySelector('.dropdown-menu');
+    const dropDownSelection = document.querySelector('.dropdown-menu-item');
 
     if (isDarkMode) {
       console.log('Dark mode toggle clicked!')
+      html.classList.add(darkModeClass);
       contentContainer.classList.add(darkModeClass);
+      moonIcon.classList.add(darkModeClass);
+      dropDownMenu.classList.add(darkModeClass);
+      dropDownSelection.classList.add(darkModeClass);
     } else {
       console.log('Light mode toggle clicked!')
+      html.classList.remove(darkModeClass)
       contentContainer.classList.remove(darkModeClass);
+      moonIcon.classList.remove(darkModeClass);
+      dropDownMenu.classList.remove(darkModeClass);
+      dropDownSelection.classList.remove(darkModeClass);
     } 
   };
 
@@ -52,6 +58,7 @@ function Header() {
             <Switcher onToggle={handleDarkModeToggle}/>
             </div>
             <svg
+              // className={`moon ${isDarkMode ? 'dark-mode' : ''}`}
               className="moon"
               xmlns="http://www.w3.org/2000/svg"
               width="22"

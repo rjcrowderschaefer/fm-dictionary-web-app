@@ -10,20 +10,33 @@
   border: none;
 }
 
+:root {
+  --background-color-light: #ffffff;
+  --background-color-dark: #000000;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-size: 62.5%;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scroll-behavior: smooth;
-  background-color: #FFFFFF;
+  background-color: var(--background-color-light);
   background-attachment: fixed;
 }
+
+html.dark-mode {
+  background-color: var(--background-color-dark);
+}
+
+
 
 img {
   display: block;
@@ -61,10 +74,15 @@ body {
   font-family: var(--selected-font-family);
 }
 
+
 .content-container {
-  background-color: #ffffff;
-  height: 100vh;
-  width: 100vw;
+  background-color: var(--background-color-light);
+  height: 100%;
+  width: 100%;
+}
+
+.content-container.dark-mode {
+  background-color: var(--background-color-dark);
 }
 
 h1 {
@@ -99,6 +117,20 @@ h1 {
   box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
 }
 
+.dark-mode .dropdown-menu {
+  border-radius: 16px;
+  background: #1F1F1F;
+  box-shadow: 0px 0px 15px 0px #A445ED;
+}
+
+.dark-mode .dropdown-menu-item {
+  color: #fff;
+  background: #1F1F1F;
+}
+
+.dark-mode .dropdown-menu-item:hover {
+  color: #a445ed;
+}
 
 .sans-serif {
   font-family: "Inter", sans-serif;
@@ -157,14 +189,13 @@ h1 {
   color: #ffffff;
 }
 
-/* .light-mode {
-  background-color: blue;
-} */
-
-
 .moon {
   margin-left: 10px;
   height: 20px;
+}
+
+.moon.dark-mode path {
+  stroke: #A445ED;
 }
 
 .search-container {
@@ -466,7 +497,7 @@ h1 {
 }
 
 .source-footer {
-  margin: 0 0 85px 24px;
+  margin: 0 0 0 24px;
 }
 
 h4 {

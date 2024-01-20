@@ -112,7 +112,7 @@ function DropdownMenu() {
           >
             <a
               href="#"
-              className="text-gray-700 block px-4 py-2 text-sm"
+              className="text-gray-700 block px-4 py-2 text-sm dropdown-menu-item"
               role="menuitem"
               tabIndex="-1"
               id="menu-item-0"
@@ -124,7 +124,7 @@ function DropdownMenu() {
             </a>
             <a
               href="#"
-              className="text-gray-700 block px-4 py-2 text-sm"
+              className="text-gray-700 block px-4 py-2 text-sm dropdown-menu-item"
               role="menuitem"
               tabIndex="-1"
               id="menu-item-1"
@@ -134,7 +134,7 @@ function DropdownMenu() {
             </a>
             <a
               href="#"
-              className="text-gray-700 block px-4 py-2 text-sm"
+              className="text-gray-700 block px-4 py-2 text-sm dropdown-menu-item"
               role="menuitem"
               tabIndex="-1"
               id="menu-item-2"
