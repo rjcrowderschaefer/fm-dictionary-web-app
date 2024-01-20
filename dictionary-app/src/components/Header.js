@@ -6,27 +6,53 @@ function Header( { onDarkModeToggle, isDarkMode} ) {
 
   const handleDarkModeToggle = (isDarkMode) => {
     const darkModeClass = 'dark-mode';
-    const html = document.querySelector('html');
-    const contentContainer = document.querySelector('.content-container');
-    const moonIcon = document.querySelector('.moon');
-    const dropDownMenu = document.querySelector('.dropdown-menu');
-    const dropDownSelection = document.querySelector('.dropdown-menu-item');
+    // const html = document.querySelector('html');
+    // const contentContainer = document.querySelector('.content-container');
+    // const moonIcon = document.querySelector('.moon');
+    // const dropDownMenu = document.querySelector('.dropdown-menu');
+    // const dropDownSelection = document.querySelector('.dropdown-menu-item');
+    // const searchContainer = document.querySelector('.search-container');
+    // const searchForm = document.querySelector('form');
+    // const placeholderSearch = document.querySelector('input[type="search"]');
+    const elementsToToggle = [
+      'html',
+      '.content-container',
+      '.moon',
+      '.dropdown-menu',
+      '.dropdown-menu-item',
+      '.search-container',
+      'form',
+      'input[type="search"]',
+    ];
 
-    if (isDarkMode) {
-      console.log('Dark mode toggle clicked!')
-      html.classList.add(darkModeClass);
-      contentContainer.classList.add(darkModeClass);
-      moonIcon.classList.add(darkModeClass);
-      dropDownMenu.classList.add(darkModeClass);
-      dropDownSelection.classList.add(darkModeClass);
-    } else {
-      console.log('Light mode toggle clicked!')
-      html.classList.remove(darkModeClass)
-      contentContainer.classList.remove(darkModeClass);
-      moonIcon.classList.remove(darkModeClass);
-      dropDownMenu.classList.remove(darkModeClass);
-      dropDownSelection.classList.remove(darkModeClass);
-    } 
+    // if (isDarkMode) {
+    //   console.log('Dark mode toggle clicked!')
+    //   html.classList.add(darkModeClass);
+    //   contentContainer.classList.add(darkModeClass);
+    //   moonIcon.classList.add(darkModeClass);
+    //   dropDownMenu.classList.add(darkModeClass);
+    //   dropDownSelection.classList.add(darkModeClass);
+    //   searchContainer.classList.add(darkModeClass);
+    //   searchForm.classList.add(darkModeClass)
+    //   placeholderSearch.classList.add(darkModeClass)
+    // } else {
+    //   console.log('Light mode toggle clicked!')
+    //   html.classList.remove(darkModeClass)
+    //   contentContainer.classList.remove(darkModeClass);
+    //   moonIcon.classList.remove(darkModeClass);
+    //   dropDownMenu.classList.remove(darkModeClass);
+    //   dropDownSelection.classList.remove(darkModeClass);
+    //   searchContainer.classList.remove(darkModeClass);
+    //   searchForm.classList.remove(darkModeClass)
+    //   placeholderSearch.classList.remove(darkModeClass)
+    // } 
+
+    elementsToToggle.forEach((selector) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.classList.toggle(darkModeClass, isDarkMode);
+      }
+    });
   };
 
   return (
