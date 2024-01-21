@@ -16,7 +16,7 @@ useEffect(() => {
     inputRef.current.style.border = "1px solid transparent";
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
       onSearch(searchedWord);

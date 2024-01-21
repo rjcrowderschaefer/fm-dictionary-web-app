@@ -3,7 +3,10 @@ import Error from "../pages/Error";
 
 function Results({ errorMessage, results }) {
   let content;
+
   console.log(results);
+  
+  
   if (errorMessage) {
     content = (
       <div className="error-message">

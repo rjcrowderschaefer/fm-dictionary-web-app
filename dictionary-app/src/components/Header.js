@@ -15,6 +15,7 @@ function Header( { onDarkModeToggle, isDarkMode} ) {
     // const searchForm = document.querySelector('form');
     // const placeholderSearch = document.querySelector('input[type="search"]');
     const elementsToToggle = [
+      'h1',
       'html',
       '.content-container',
       '.moon',
@@ -23,6 +24,9 @@ function Header( { onDarkModeToggle, isDarkMode} ) {
       '.search-container',
       'form',
       'input[type="search"]',
+      '.results-meanings h2',
+      '.source-url',
+      '.no-def-found h3',
     ];
 
     // if (isDarkMode) {
